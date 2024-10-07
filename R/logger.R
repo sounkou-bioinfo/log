@@ -192,7 +192,7 @@ Logger <- R6::R6Class(
         cbs[[1]] <- prefix
 
       if(!is.null(prefix) && !is.function(prefix))
-        cbs[[1]] <- \() prefix
+        cbs[[1]] <- function() prefix
 
       cbs <- sapply(cbs, function(fn) fn())
       cbs <- paste(cbs, collapse = " ")
